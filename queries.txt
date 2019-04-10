@@ -1,0 +1,18 @@
+//for testing purposes all queries will have the about attribute filtered out for readability
+//set about:1 for default
+
+//student queries
+//browse article by category
+db.Article.find({category:”Arts”}, { about:0}) 
+//browse articles by a keyword
+db.Article.find({about:/Pythagorean/}, { about:0}) 
+
+//tutor queries
+//add article
+db.Article.insertOne({category:”Arts”, type:”Biography”, name:”test”, about:”testestetstset”, articleID: 10}) 
+//modify article
+db.Article.update({articleID:10}, {$set:{category:”Mathematics”, type:”Theroem”, name:”testmodify”, about:”testestetstsetmodify”}}) 
+
+//admin queries
+//delete article
+db.Article.deleteOne({articleID:10}); 
