@@ -1,0 +1,26 @@
+//queries to create users with role permissions Iteration 4
+//create an admin
+db.createUser(
+  {
+    user: "admin",
+    pwd: "abc123",
+    roles: [ { role: "userAdminAnyDatabase", db: "Article" }, "readWriteAnyDatabase" ]
+  }
+)
+//create a tutor
+use test
+db.createUser(
+  {
+    user: "tutor1",
+    pwd: "xyz123",
+    roles: [ { role: "readWrite", db: "Article" }]
+  }
+)
+//create a User
+db.createUser(
+  {
+    user: "user",
+    pwd: "xyz123",
+    roles: [{ role: "read", db: "Article"} ]
+  }
+)
