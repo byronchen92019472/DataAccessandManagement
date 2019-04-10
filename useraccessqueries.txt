@@ -8,7 +8,6 @@ db.createUser(
   }
 )
 //create a tutor
-use test
 db.createUser(
   {
     user: "tutor1",
